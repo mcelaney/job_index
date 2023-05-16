@@ -10,34 +10,34 @@ defmodule JinWeb.CoreComponents do
   alias JinWeb.Components.Core.Back
   alias JinWeb.Components.Core.Flash
   alias JinWeb.Components.Core.Form
+  alias JinWeb.Components.Core.Form.Button
+  alias JinWeb.Components.Core.Form.Error
+  alias JinWeb.Components.Core.Form.Input
+  alias JinWeb.Components.Core.Form.Label
   alias JinWeb.Components.Core.Header
   alias JinWeb.Components.Core.Icon
   alias JinWeb.Components.Core.JSCommands
   alias JinWeb.Components.Core.List
   alias JinWeb.Components.Core.Modal
   alias JinWeb.Components.Core.Table
-  alias JinWeb.Components.Core.Form.Button
-  alias JinWeb.Components.Core.Form.Error
-  alias JinWeb.Components.Core.Form.Input
-  alias JinWeb.Components.Core.Form.Label
 
-  defdelegate modal(assigns), to: Modal
-  defdelegate flash(assigns), to: Flash
-  defdelegate flash_group(assigns), to: Flash
   defdelegate back(assigns), to: Back
-  defdelegate simple_form(assigns), to: Form
   defdelegate button(assigns), to: Button
   defdelegate error(assigns), to: Error
+  defdelegate flash(assigns), to: Flash
+  defdelegate flash_group(assigns), to: Flash
+  defdelegate header(assigns), to: Header
+  defdelegate hide(js, selector), to: JSCommands
+  defdelegate hide_modal(js, id), to: Modal
+  defdelegate icon(assigns), to: Icon
   defdelegate input(assigns), to: Input
   defdelegate label(assigns), to: Label
-  defdelegate header(assigns), to: Header
-  defdelegate table(assigns), to: Table
   defdelegate list(assigns), to: List
-  defdelegate icon(assigns), to: Icon
-  defdelegate hide(js, selector), to: JSCommands
+  defdelegate modal(assigns), to: Modal
   defdelegate show(js, selector), to: JSCommands
   defdelegate show_modal(js, id), to: Modal
-  defdelegate hide_modal(js, id), to: Modal
+  defdelegate simple_form(assigns), to: Form
+  defdelegate table(assigns), to: Table
   defdelegate translate_error(error), to: Error
   defdelegate translate_errors(errors, field), to: Error
 end

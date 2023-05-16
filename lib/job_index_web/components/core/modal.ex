@@ -4,8 +4,8 @@ defmodule JinWeb.Components.Core.Modal do
   use Phoenix.Component
   import JinWeb.Components.Core.Icon
   import JinWeb.Gettext
-  alias Phoenix.LiveView.JS
   alias JinWeb.Components.Core.JSCommands
+  alias Phoenix.LiveView.JS
 
   @doc """
   Renders a modal.
