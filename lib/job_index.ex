@@ -1,9 +1,11 @@
 defmodule Jin do
   @moduledoc """
-  Jin keeps the contexts that define your domain
-  and business logic.
-
-  Contexts are also responsible for managing your data, regardless
-  if it comes from the database, an external API or others.
+  Jin is a job index that crawls careers pages and indexes the jobs it finds.
   """
+
+  @typedoc """
+  Expected to be a fully qualified external url.  For example:
+  https://www.example.com/careers
+  """
+  @type url :: String.t()
 end
