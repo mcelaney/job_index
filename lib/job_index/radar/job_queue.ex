@@ -66,14 +66,12 @@ defmodule Jin.Radar.JobQueue do
       # Server API
 
       @impl true
-      def init(_) do
-        {:ok, []}
-      end
+      def init(state), do: {:ok, state}
 
       @impl true
-      def handle_call({:add, items}, _from, state) do
-        {:reply, :ok, [items | state]}
-      end
+      def handle_call({:add, items}, _from, state), do: {:reply, :ok, [items | state]}
+
+      def handle_call(:reset, _from, _), do: {:reply, :ok, []}
 
       def handle_call(:process, _from, []), do: {:reply, :ok, []}
 
@@ -81,10 +79,6 @@ defmodule Jin.Radar.JobQueue do
         {result, remaining} = items |> List.flatten() |> processor()
 
         {:reply, result, remaining}
-      end
-
-      def handle_call(:reset, _from, _) do
-        {:reply, :ok, []}
       end
     end
   end

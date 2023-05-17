@@ -22,6 +22,6 @@ defmodule Jin.Radar do
 
       :ok
   """
-  @spec ping([url]) :: :obviously_wrong
+  @spec ping([url]) :: :ok
   def ping(_base_urls), do: :ok
 end
